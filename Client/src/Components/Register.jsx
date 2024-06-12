@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom"; // Step 1: Import Link
 import axios from "axios";
 
-const Register = () => {v
+const Register = () => {
+  const [user, setUser] = useState({});
   const [userDetails, setUserDetails] = useState({ username: "", email: "" });
   const [fullName, setFullName] = useState("");
   const [password, setPassword] = useState("");
@@ -40,10 +41,11 @@ const Register = () => {v
           },
         }
       );
-      // console.log(response.data);
-      // setUser(userDetails);
-      // setIsRegistered(true); // Step 3: Set registration status to true after successful registration
-      navigate("/login", { state: { email: userDetails.email, password: password } }); 
+      console.log(response.data);
+      setUser(userDetails);
+      console.log(userDetails);
+      setIsRegistered(true); // Step 3: Set registration status to true after successful registration
+      navigate("/login", { state: { username: userDetails.username, password: password } }); 
     } catch (error) {
       console.error("Error registering user", error);
     }
