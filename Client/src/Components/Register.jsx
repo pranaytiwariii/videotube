@@ -91,7 +91,7 @@ const Register = () => {
       ) : (
         <div>
           <p>Registration successful!</p>
-          <Link to="/login">Go to Login</Link> {/* Render Link to login page */}
+          <Link to="/login">Go to Login</Link>
         </div>
       )}
     </div>
